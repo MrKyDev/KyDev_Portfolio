@@ -200,7 +200,7 @@ p {
 
 /* Hero Section */
 #hero {
-	background-image: url(./img/Home.jpg);
+	background-image: url(./img/landing.jpg);
 	background-size: cover;
 	background-position: top center;
 	position: relative;
@@ -674,7 +674,7 @@ p {
 /* CV Image */
 .cv-image {
 	margin-top: auto;
-    max-width: 35%;
+    max-width: 455px;
     height: auto;
     border-radius: 8px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
