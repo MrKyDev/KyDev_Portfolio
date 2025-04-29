@@ -277,13 +277,16 @@
         <p>Specializing in web development, graphic design, photography, videography, and system development. My passion lies in blending technology and creativity to deliver stunning, functional solutions. From crafting dynamic websites and visual designs to capturing captivating photos and videos, I bring a holistic approach to every project. Explore my portfolio to see how I can bring your vision to life.</p>
         <button class="view-btn" onclick="openCV()">View My CV</button>
 
-            <!-- Modal for CV -->
-            <div class="modal" id="cvModal">
-                <img src="img/CV.png" alt="My CV" class="cv-image" width="30%">
-                <button class="close-btn" onclick="closeCV()">Close Viewing CV</button>
-            </div>
-      </div>
+<!-- Modal for CV -->
+<div class="modal" id="cvModal">
+    <div class="modal-content">
+        <img src="img/CV.png" alt="My CV" class="cv-image" id="cv-image" width="30%">
+        <!-- Download CV Button -->
+        <button class="download-btn" onclick="downloadCV()">Download CV</button>
+        <button class="close-btn" onclick="closeCV()">Close Viewing CV</button>
     </div>
+</div>
+
   </section>
   <!-- End About Section -->
 

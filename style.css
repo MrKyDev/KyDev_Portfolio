@@ -640,7 +640,7 @@ p {
 	border: 7px solid crimson;
 	z-index: -1;
 }
-/* View CV button */
+/* View CV Button */
 .view-btn {
     padding: 10px 20px;
     font-size: 18px;
@@ -656,7 +656,6 @@ p {
     letter-spacing: .2rem;
     background-color: #47857f;
 }
-
 /* Modal Styles */
 .modal {
     position: fixed;
@@ -669,17 +668,38 @@ p {
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    z-index: 1000;
 }
-
-/* CV Image */
-.cv-image {
-	margin-top: auto;
-    max-width: 455px;
-    height: auto;
-    border-radius: 8px;
+/* Modal Content*/
+.modal-content {
+    text-align: center;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
 }
-
+/* CV Image */
+.cv-image {
+    max-width: 535px;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.5);
+}
+/* Download Button */
+.download-btn {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 18px;
+    background-color: #47857f;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+.download-btn:hover {
+    background-color: #61a099;
+}
 /* Close Button */
 .close-btn {
     margin-top: 10px;
@@ -692,7 +712,6 @@ p {
     border-radius: 5px;
     transition: 0.3s;
 }
-
 .close-btn:hover {
     background-color: darkred;
 }
