@@ -5,6 +5,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
+  <!-- Font Awesome CDN -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="icon" type="image/x-icon" href="img/logo.png">
   <title>KyDev Portfolio</title>
 </head>
@@ -276,25 +278,29 @@
         <h2>Front End Developer</h2>
         <p>Specializing in web development, graphic design, photography, videography, and system development. My passion lies in blending technology and creativity to deliver stunning, functional solutions. From crafting dynamic websites and visual designs to capturing captivating photos and videos, I bring a holistic approach to every project. Explore my portfolio to see how I can bring your vision to life.</p>
 <!-- Modal for CV -->
+<!-- Trigger Button -->
 <button class="view-btn" onclick="openCV()">View My CV</button>
 
-<!-- Modal for CV -->
+<!-- Modal -->
 <div class="modal" id="cvModal">
-    <canvas id="cvCanvas" class="cv-canvas"></canvas>
-
-    <div class="cv-buttons">
-      <div class="hire-me-container">
-        <a href="mailto:kydev@example.com?subject=Hiring Inquiry&body=Hi KYDEV,%0D%0A%0D%0AI am interested in hiring you. Please get back to me." class="hire-btn">Hire Me</a>
-      </div>
-      <div class="cv-action-row">
-        <button class="download-btn" onclick="downloadCV()">Download CV</button>
-        <button class="close-btn" onclick="closeCV()">Close Viewing CV</button>
-      </div>
+  <div class="cv-container">
+    <div class="cv-image-wrapper">
+      <img src="img/CV.png" alt="My CV" id="cvImage" class="cv-image" />
+      <div class="watermark">KYDEV PROPERTY</div>
     </div>
-    
+    <div class="cv-buttons">
+      <!-- Download CV Button (Green) -->
+      <button class="download-btn" onclick="downloadCV()">Download CV</button>
+      <!-- Hire Me Button (Blue) -->
+      <a href="mailto:kydev1323@gmail.com" class="hire-btn">Hire Me</a>
+    </div>
+    <!-- Close Button (Upper Right) -->
+<button class="close-btn" onclick="closeCV()">
+  <i class="fas fa-times"></i>
+</button>
+
+  </div>
 </div>
-
-
   </section>
   <!-- End About Section -->
 

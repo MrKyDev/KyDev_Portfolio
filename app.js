@@ -33,49 +33,45 @@ document.querySelector('#menu-btn').onclick = () =>{
 
 /*Section for CV */
 function openCV() {
-    const modal = document.getElementById('cvModal');
-    const canvas = document.getElementById('cvCanvas');
-    const ctx = canvas.getContext('2d');
-
-    const img = new Image();
-    img.src = 'img/CV.png'; // Your original CV image path
-
-    img.onload = function () {
-        // Set canvas size
-        canvas.width = img.naturalWidth;
-        canvas.height = img.naturalHeight;
-
-        // Draw image
-        ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
-
-        // Add watermark
-        const fontSize = canvas.width * 0.15;
-        ctx.font = `${fontSize}px Arial`;
-        ctx.fillStyle = 'rgba(128, 128, 128, 0.5)';
-        ctx.textAlign = 'center';
-        ctx.textBaseline = 'middle';
-
-        ctx.save();
-        ctx.translate(canvas.width / 2, canvas.height / 2);
-        ctx.rotate(-45 * Math.PI / 180);
-        ctx.fillText('KYDEV PROPERTY', 0, 0);
-        ctx.restore();
-
-        modal.style.display = 'flex';
-    };
+  document.getElementById('cvModal').style.display = 'flex';
+  document.body.style.overflow = 'hidden'; // Disable scroll
 }
 
 function closeCV() {
-    document.getElementById('cvModal').style.display = 'none';
+  document.getElementById('cvModal').style.display = 'none';
+  document.body.style.overflow = ''; // Enable scroll
 }
 
 function downloadCV() {
-    const canvas = document.getElementById('cvCanvas');
-    const link = document.createElement('a');
-    link.href = canvas.toDataURL('image/png');
-    link.download = 'KyDev CV.png';
+  const img = document.getElementById("cvImage");
+  const canvas = document.createElement("canvas");
+  const ctx = canvas.getContext("2d");
+
+  const imgObj = new Image();
+  imgObj.crossOrigin = "anonymous";
+  imgObj.src = img.src;
+
+  imgObj.onload = function () {
+    canvas.width = imgObj.width;
+    canvas.height = imgObj.height;
+
+    ctx.drawImage(imgObj, 0, 0);
+
+    // Add watermark
+    const fontSize = canvas.width * 0.12;
+    ctx.font = `${fontSize}px Arial`;
+    ctx.fillStyle = " rgba(150, 150, 150, 0.68)";
+    ctx.textAlign = "center";
+    ctx.translate(canvas.width / 2, canvas.height / 2);
+    ctx.rotate(-Math.PI / 6); // -30 degrees
+    ctx.fillText("KYDEV PROPERTY", 0, 0);
+
+    const link = document.createElement("a");
+    link.download = "KyDev_CV.png";
+    link.href = canvas.toDataURL();
     link.click();
-}
+  };
+};
 
 // FOR SECURITY OF THE WEBSITE //
 
