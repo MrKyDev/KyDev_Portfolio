@@ -275,17 +275,25 @@
         <h1 class="section-title">About <span>me</span></h1>
         <h2>Front End Developer</h2>
         <p>Specializing in web development, graphic design, photography, videography, and system development. My passion lies in blending technology and creativity to deliver stunning, functional solutions. From crafting dynamic websites and visual designs to capturing captivating photos and videos, I bring a holistic approach to every project. Explore my portfolio to see how I can bring your vision to life.</p>
-        <button class="view-btn" onclick="openCV()">View My CV</button>
+<!-- Modal for CV -->
+<button class="view-btn" onclick="openCV()">View My CV</button>
 
 <!-- Modal for CV -->
 <div class="modal" id="cvModal">
-    <div class="modal-content">
-        <img src="img/CV.png" alt="My CV" class="cv-image" id="cv-image" width="30%">
-        <!-- Download CV Button -->
+    <canvas id="cvCanvas" class="cv-canvas"></canvas>
+
+    <div class="cv-buttons">
+      <div class="hire-me-container">
+        <a href="mailto:kydev@example.com?subject=Hiring Inquiry&body=Hi KYDEV,%0D%0A%0D%0AI am interested in hiring you. Please get back to me." class="hire-btn">Hire Me</a>
+      </div>
+      <div class="cv-action-row">
         <button class="download-btn" onclick="downloadCV()">Download CV</button>
         <button class="close-btn" onclick="closeCV()">Close Viewing CV</button>
+      </div>
     </div>
+    
 </div>
+
 
   </section>
   <!-- End About Section -->

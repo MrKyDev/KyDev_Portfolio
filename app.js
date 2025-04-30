@@ -32,62 +32,50 @@ document.querySelector('#menu-btn').onclick = () =>{
 }
 
 /*Section for CV */
-// Open CV Modal
-function openCV() {
-    document.getElementById("cvModal").style.display = "flex";
-}
-
-// Close CV Modal
-function closeCV() {
-    document.getElementById("cvModal").style.display = "none";
-}
-// Function to open the CV modal
 function openCV() {
     const modal = document.getElementById('cvModal');
-    modal.style.display = 'flex'; // Show the modal
+    const canvas = document.getElementById('cvCanvas');
+    const ctx = canvas.getContext('2d');
+
+    const img = new Image();
+    img.src = 'img/CV.png'; // Your original CV image path
+
+    img.onload = function () {
+        // Set canvas size
+        canvas.width = img.naturalWidth;
+        canvas.height = img.naturalHeight;
+
+        // Draw image
+        ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+
+        // Add watermark
+        const fontSize = canvas.width * 0.15;
+        ctx.font = `${fontSize}px Arial`;
+        ctx.fillStyle = 'rgba(128, 128, 128, 0.5)';
+        ctx.textAlign = 'center';
+        ctx.textBaseline = 'middle';
+
+        ctx.save();
+        ctx.translate(canvas.width / 2, canvas.height / 2);
+        ctx.rotate(-45 * Math.PI / 180);
+        ctx.fillText('KYDEV PROPERTY', 0, 0);
+        ctx.restore();
+
+        modal.style.display = 'flex';
+    };
 }
 
-// Function to close the CV modal
 function closeCV() {
-    const modal = document.getElementById('cvModal');
-    modal.style.display = 'none';
+    document.getElementById('cvModal').style.display = 'none';
 }
 
-// Function to download CV with watermark
 function downloadCV() {
-    const imgElement = document.querySelector(".cv-image");
-    const canvas = document.createElement("canvas"); 
-    const ctx = canvas.getContext("2d");
-
-    // Set canvas size to match the image size
-    canvas.width = imgElement.naturalWidth; 
-    canvas.height = imgElement.naturalHeight;
-
-    // Draw the image onto the canvas
-    ctx.drawImage(imgElement, 0, 0, canvas.width, canvas.height);
-
-    // Add watermark text "KYDEV PROPERTY"
-    const fontSize = canvas.width * 0.15;  // Font size 
-    ctx.font = `${fontSize}px Arial`;
-    ctx.fillStyle = "rgba(255, 0, 0, 0.74)";
-    ctx.textAlign = "center";
-    ctx.textBaseline = "middle";
-
-    // Rotate and apply the watermark at a diagonal angle
-    ctx.save();
-    ctx.translate(canvas.width / 2, canvas.height / 2);
-    ctx.rotate(-45 * Math.PI / 180);
-    ctx.fillText("KYDEV PROPERTY", 0, 0);
-    ctx.restore();
-
-    // Create a download link
-    const dataUrl = canvas.toDataURL("image/png");  // Convert canvas to image data
-    const link = document.createElement("a"); 
-    link.href = dataUrl;
-    link.download = "CV.png";  // Set the file name
+    const canvas = document.getElementById('cvCanvas');
+    const link = document.createElement('a');
+    link.href = canvas.toDataURL('image/png');
+    link.download = 'KyDev CV.png';
     link.click();
 }
-
 
 // FOR SECURITY OF THE WEBSITE //
 

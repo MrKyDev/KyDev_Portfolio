@@ -656,6 +656,7 @@ p {
     letter-spacing: .2rem;
     background-color: #47857f;
 }
+
 /* Modal Styles */
 .modal {
     position: fixed;
@@ -663,58 +664,86 @@ p {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.7);
+    background: rgba(0, 0, 0, 0.85);
     display: none;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    z-index: 1000;
+    z-index: 9999;
 }
-/* Modal Content*/
-.modal-content {
-    text-align: center;
-    background: white;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
-}
-/* CV Image */
-.cv-image {
-    max-width: 535px;
+
+/* Canvas for CV */
+.cv-canvas {
+    max-width: 460px;
     height: auto;
     border-radius: 8px;
-    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    background-color: white;
 }
-/* Download Button */
-.download-btn {
-    margin-top: 20px;
-    padding: 10px 20px;
-    font-size: 18px;
-    background-color: #47857f;
-    color: white;
-    border: none;
-    cursor: pointer;
-    border-radius: 5px;
-    transition: 0.3s;
-}
-.download-btn:hover {
-    background-color: #61a099;
-}
-/* Close Button */
-.close-btn {
-    margin-top: 10px;
-    padding: 10px 20px;
-    font-size: 18px;
-    background-color: red;
-    color: white;
-    border: none;
-    cursor: pointer;
-    border-radius: 5px;
-    transition: 0.3s;
-}
-.close-btn:hover {
-    background-color: darkred;
-}
+
+/* Buttons Layout */
+.cv-buttons {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin-top: 20px;
+  }
+  
+  .hire-me-container {
+	margin-bottom: 20px;
+  }
+  
+  .hire-btn {
+	padding: 10px 25px;
+	font-size: 18px;
+	background-color: #4CAF50;
+	color: white;
+	text-decoration: none;
+	border-radius: 5px;
+	transition: background 0.3s;
+  }
+  
+  .hire-btn:hover {
+	background-color: #388e3c;
+  }
+  
+  .cv-action-row {
+	display: flex;
+	justify-content: space-between;
+	width: 100%;
+	max-width: 400px;
+	gap: 20px;
+  }
+  
+  .download-btn,
+  .close-btn {
+	flex: 1;
+	padding: 10px 20px;
+	font-size: 15px;
+	border-radius: 5px;
+	border: none;
+	color: white;
+	cursor: pointer;
+	transition: background 0.3s;
+  }
+  
+  .download-btn {
+	background-color: #007BFF;
+  }
+  
+  .download-btn:hover {
+	background-color: #0056b3;
+  }
+  
+  .close-btn {
+	background-color: red;
+  }
+  
+  .close-btn:hover {
+	background-color: darkred;
+  }
+  
+
 /* End About Section */
 
 /* contact Section */
