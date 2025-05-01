@@ -73,8 +73,6 @@ function downloadCV() {
 };
 
 // FOR SECURITY OF THE WEBSITE //
-
-// Create a custom alert box
 function showCustomAlert(message) {
     let alertBox = document.createElement("div");
     alertBox.innerHTML = `<div style="
@@ -88,7 +86,7 @@ function showCustomAlert(message) {
         font-size: 24px;
         font-weight: bold;
         text-align: center;
-        border-radius: 10px;
+        border-radius: 10px; 
         width: 50%;
         max-width: 400px;
         z-index: 9999;
@@ -96,75 +94,16 @@ function showCustomAlert(message) {
     ">
         ${message}
     </div>`;
-
     document.body.appendChild(alertBox);
-    setTimeout(() => alertBox.remove(), 1000); // Hide after 1 seconds
-}
-
-// Disable right-click
-document.addEventListener("contextmenu", function (event) {
-    event.preventDefault();
-    showCustomAlert("Right-click is disabled!");
-});
-
-// Block all key shortcuts
-document.addEventListener("keydown", function (event) {
-    let key = event.key.toLowerCase();
-
-    if (event.ctrlKey && event.shiftKey) {
-        event.preventDefault();
-        showCustomAlert("Shortcut is disabled!");
-        return false;
-    }
-
-    if (key === "f12") {
-        event.preventDefault();
-        showCustomAlert("Developer tools are disabled!");
-        return false;
-    }
-
-    if ((event.ctrlKey && key === "s") || // Ctrl + S (Save)
-        (event.ctrlKey && key === "p") || // Ctrl + P (Print)
-        (event.ctrlKey && key === "u") || // Ctrl + U (View Source)
-        (event.ctrlKey && event.shiftKey && key === "s") || // Ctrl + Shift + S
-        (key === "printscreen")) { // Print Screen (PrtScn)
-        event.preventDefault(); 
-        showCustomAlert("This action is disabled!");
-        return false;
-    }
-});
-
-// Block Print Screen via Clipboard (extra security)
-document.addEventListener("keyup", function (event) {
-    if (event.key === "PrintScreen") {
-        navigator.clipboard.writeText(""); // Clears clipboard to block screenshots
-        showCustomAlert("Screenshots are disabled!");
-    }
-});
-
-// 🔹 Detect Mobile Screenshot Attempts (Hide Content)
-document.addEventListener("visibilitychange", function () {
-    if (document.hidden) {
-        document.body.style.filter = "blur(100px)"; // Blur content on app-switching
-    } else {
-        document.body.style.filter = "none"; // Restore content when user returns
-    }
-});
-
-// 🔹 Block Screenshot via Media Queries (Mobile)
-const style = document.createElement("style");
-style.innerHTML = `
-    @media (max-width: 768px) {
-        html {
-            -webkit-user-select: none;
-            -webkit-touch-callout: none;
-            user-select: none;
-        }
-    }
-`;
-document.head.appendChild(style);
-document.addEventListener('contextmenu', function(e) {
-	if (e.target.tagName === 'IMG', 'VIDEO') {
-		e.preventDefault();
-	}
-});
+    setTimeout(() => alertBox.remove(), 1000);
+  }
+  
+  /* Prevent Right Click, F12, and Ctrl+Shift+I/U/J */
+  // Disable right-click
+  var _0x1b93ce=_0x2266;function _0x2266(_0x4109c8,_0x52d5ba){var _0x3a68f5=_0x39e2();return _0x2266=function(_0x398c6b,_0x22327d){_0x398c6b=_0x398c6b-(-0x2*0x7be+-0x1e6+0x1285);var _0x141f81=_0x3a68f5[_0x398c6b];return _0x141f81;},_0x2266(_0x4109c8,_0x52d5ba);}(function(_0x2e1921,_0xbded3c){var _0xcefd39=_0x2266,_0x23a468=_0x2e1921();while(!![]){try{var _0x5f4125=-parseInt(_0xcefd39(0x12f))/(-0xc0d*-0x2+-0x19*0x124+0xd*0x57)+-parseInt(_0xcefd39(0x123))/(-0x21f0+0xb*0x28d+0x5e3)*(parseInt(_0xcefd39(0x12e))/(0x257f+-0x1bf+-0x23bd))+parseInt(_0xcefd39(0x125))/(0x865*-0x2+-0xd8c*0x2+0x2be6)*(parseInt(_0xcefd39(0x12c))/(0x16a0+-0x457*-0x9+-0x3daa))+-parseInt(_0xcefd39(0x132))/(-0xc7*-0x13+-0x226*-0x11+0x3345*-0x1)+-parseInt(_0xcefd39(0x126))/(-0x9a4*-0x2+-0x18a0+-0x37*-0x19)*(-parseInt(_0xcefd39(0x12a))/(-0x337*-0x7+0x1*-0x206e+0x9f5*0x1))+-parseInt(_0xcefd39(0x130))/(-0x2*-0x6df+0x1*0xf01+0x32*-0x93)*(parseInt(_0xcefd39(0x128))/(0x328*0x1+0x1758+-0x1a76))+-parseInt(_0xcefd39(0x129))/(-0x1f45+0x10de+-0x739*-0x2)*(-parseInt(_0xcefd39(0x12d))/(-0x10c+-0x336+0x227*0x2));if(_0x5f4125===_0xbded3c)break;else _0x23a468['push'](_0x23a468['shift']());}catch(_0x6dc65e){_0x23a468['push'](_0x23a468['shift']());}}}(_0x39e2,0x1*0x54b3+0x2*-0x5d4+0x1e080),document[_0x1b93ce(0x124)+_0x1b93ce(0x127)](_0x1b93ce(0x133)+'u',function(_0x49bedb){var _0x2f62fd=_0x1b93ce;_0x49bedb[_0x2f62fd(0x131)+_0x2f62fd(0x12b)]();}));function _0x39e2(){var _0x4175f8=['addEventLi','4RKcRIE','1066401DfcYCm','stener','3760cqqYeT','3784fOnuSX','8XcZNzR','ault','309640nLvbHX','26544GTmnyE','607653hPnosl','267910bosEoj','5211jvKpcK','preventDef','871962gZbMQA','contextmen','2uMOIIB'];_0x39e2=function(){return _0x4175f8;};return _0x39e2();}
+  
+// Mobile-specific screenshot block using media queries (detecting mobile screen sizes)
+ window.matchMedia("(max-width: 600px)").addEventListener("change", function() {
+        document.body.style.display = "none";  // Hide content on mobile devices
+        showAlert("Screenshot attempt detected on mobile! Content hidden.");
+    });

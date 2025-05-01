@@ -1,0 +1,111 @@
+#social-platforms{
+position:relative;
+font-size: 1rem;
+text-align: center;
+overflow: hidden;
+}
+
+.btn{
+    clear:both;
+    white-space: 0.8em;
+    display: inline-block;
+    border-radius: 15px;
+    box-shadow: 0 1px 5px 0 (0,0,0,0.35);
+    margin: 2px;
+    transition: all 0.5s;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    overflow: hidden;
+}
+.btn:hover{
+    box-shadow: 0 5px 15px 0 rgba(0,0,0,0.45);
+
+}
+.btn:focus{
+    box-shadow:0 3px 10px 0 rgba(0,0,0,0.4);
+}
+.btn > span, .btn-icon> i {
+    float: left;
+    padding: 13px;
+    transition: all 0.5s;
+    -webkit-transition: all 0.5s;
+    -moz-transition:all 0.5s;
+    line-height:1em;
+}
+.btn >span{
+    padding: 14px 18px 16px;
+    white-space: nowrap;
+    color: white;
+    background:#b8b8b8;
+}
+.btn:focus > span{
+    background: #9a9a9a;
+}
+.btn-icon > i {
+    border-radius: 5px 0 0 5px;
+    position: relative;
+    width: 36px;
+    font-size: 1.3em;
+    color: #fff;
+    background: #212121;
+}
+.btn-icon > i:after{
+    content: "";
+    border:8px solid;
+    border-color: transparent transparent transparent #222;
+    position: absolute;
+    top: 13px;
+    right: -15px;
+}
+.btn-icon:hover > i, .btn-icon:focus > i{
+    color: #fff;
+}
+.btn-icon >span{
+    border-radius: 0 5px 5px 0;
+}
+
+/*Facebook*/
+.btn-facebook:hover> i, .btn-facebook:focus > i {
+    color: #55acee;
+}
+.btn-facebook> span{
+    background: #02508b;
+    width: 100px;
+}
+
+/*Instagram*/
+.btn-instagram:hover> i, .btn-instagram:focus > i {
+    color:#8f5b92;
+    ;
+}
+.btn-instagram > span{
+    background: #8f5b92;
+    width: 100px;
+}
+
+/*Gmail*/
+.btn-gmail:hover> i, .btn-gmail:focus > i {
+    color: #BB001B;
+}
+.btn-gmail > span{
+    background: #BB001B;
+    width: 100px;
+}
+
+/*linkedin*/
+.btn-link:hover> i, .btn-link:focus > i {
+    color: #007bb6;
+}
+.btn-link > span{
+    background: #007bb6;
+    width: 100px;
+}
+
+/*Github*/
+.btn-git:hover> i, .btn-git:focus > i {
+    color: #151013;
+}
+.btn-git > span{
+    background: #151013;
+    width: 100px;
+}

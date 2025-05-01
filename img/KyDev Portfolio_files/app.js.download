@@ -1,0 +1,122 @@
+const hamburger = document.querySelector('.header .nav-bar .nav-list .hamburger');
+const mobile_menu = document.querySelector('.header .nav-bar .nav-list ul');
+const menu_item = document.querySelectorAll('.header .nav-bar .nav-list ul li a');
+const header = document.querySelector('.header.container');
+
+hamburger.addEventListener('click', () => {
+	hamburger.classList.toggle('active');
+	mobile_menu.classList.toggle('active');
+});
+
+document.addEventListener('scroll', () => {
+	var scroll_position = window.scrollY;
+	if (scroll_position > 250) {
+		header.style.backgroundColor = '#29323c';
+	} else {
+		header.style.backgroundColor = 'transparent';
+	}
+});
+
+menu_item.forEach((item) => {
+	item.addEventListener('click', () => {
+		hamburger.classList.toggle('active');
+		mobile_menu.classList.toggle('active');
+	});
+});
+let navbar = document.querySelector('.navbar');
+
+document.querySelector('#menu-btn').onclick = () =>{
+    navbar.classList.toggle('active');
+    searchForm.classList.remove('active');
+    cartItem.classList.remove('active');
+}
+
+/*Section for CV */
+function openCV() {
+  document.getElementById('cvModal').style.display = 'flex';
+  document.body.style.overflow = 'hidden'; // Disable scroll
+}
+
+function closeCV() {
+  document.getElementById('cvModal').style.display = 'none';
+  document.body.style.overflow = ''; // Enable scroll
+}
+
+function downloadCV() {
+  const img = document.getElementById("cvImage");
+  const canvas = document.createElement("canvas");
+  const ctx = canvas.getContext("2d");
+
+  const imgObj = new Image();
+  imgObj.crossOrigin = "anonymous";
+  imgObj.src = img.src;
+
+  imgObj.onload = function () {
+    canvas.width = imgObj.width;
+    canvas.height = imgObj.height;
+
+    ctx.drawImage(imgObj, 0, 0);
+
+    // Add watermark
+    const fontSize = canvas.width * 0.12;
+    ctx.font = `${fontSize}px Arial`;
+    ctx.fillStyle = " rgba(150, 150, 150, 0.68)";
+    ctx.textAlign = "center";
+    ctx.translate(canvas.width / 2, canvas.height / 2);
+    ctx.rotate(-Math.PI / 6); // -30 degrees
+    ctx.fillText("KYDEV PROPERTY", 0, 0);
+    const link = document.createElement("a");
+    link.download = "KyDev_CV.png";
+    link.href = canvas.toDataURL();
+    link.click();
+  };
+};
+
+// FOR SECURITY OF THE WEBSITE //
+
+// Create a custom alert box
+ function showAlert(message) {
+    const box = document.getElementById("custom-alert");
+    box.innerText = message;
+    box.style.display = "block";
+    setTimeout(() => box.style.display = "none", 1500);
+  }
+
+  // ✅ Disable Right-Click
+  window.addEventListener("contextmenu", (e) => {
+    e.preventDefault();
+    showAlert("❌ Right-click is disabled.");
+  });
+
+  // ✅ Block Dangerous Key Shortcuts & PrintScreen
+  window.addEventListener("keydown", (e) => {
+    const key = e.key.toLowerCase();
+    const ctrl = e.ctrlKey;
+    const shift = e.shiftKey;
+
+    const blockedCombos = [
+      "f12", // Dev Tools
+      "u", "s", "p", "i", "j", "c", "k", "d", "t" // other keys
+    ];
+
+    if ((ctrl && blockedCombos.includes(key)) || (ctrl && shift && blockedCombos.includes(key))) {
+      e.preventDefault();
+      showAlert("❌ Key combination blocked.");
+    }
+
+    if (key === "printscreen") {
+      navigator.clipboard.writeText("").then(() => {
+        showAlert("📸 Screenshot blocked.");
+      });
+    }
+  });
+
+  // ✅ Detect Mobile Screenshot Attempt (Focus Loss)
+  document.addEventListener("visibilitychange", () => {
+    if (document.visibilityState === "hidden") {
+      document.body.style.display = "none";
+    } else {
+      document.body.style.display = "";
+      showAlert("⚠️ Screenshot attempt blocked.");
+    }
+  });
