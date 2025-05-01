@@ -65,7 +65,6 @@ function downloadCV() {
     ctx.translate(canvas.width / 2, canvas.height / 2);
     ctx.rotate(-Math.PI / 6); // -30 degrees
     ctx.fillText("KYDEV PROPERTY", 0, 0);
-
     const link = document.createElement("a");
     link.download = "KyDev_CV.png";
     link.href = canvas.toDataURL();
