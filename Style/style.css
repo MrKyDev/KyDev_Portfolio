@@ -388,7 +388,7 @@ p {
   .card-container {
 	display: flex;
 	justify-content: center;
-	gap: 20px;
+	gap: 50px;
 	flex-wrap: wrap;
 	max-width: 1200px;
 	margin: 0 auto;
@@ -397,8 +397,8 @@ p {
   .experience-card {
 	background: #ffffff;
 	border-left: 5px solid #007BFF;
-	padding: 20px;
-	width: 300px;
+	padding: 30px;
+	width: 610px;
 	box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 	text-align: left;
 	transition: transform 0.3s ease;
