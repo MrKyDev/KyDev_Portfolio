@@ -375,6 +375,9 @@ p {
 /* End Services Section */
 
 /* Start of Experience*/
+.experience-section {
+	padding-top: 10%; /* Adjust based on the height of your fixed navbar */
+  }
 .experience-section .box-container{
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
@@ -422,6 +425,9 @@ p {
 }
   
 /*End of Experience*/
+#skills {
+	padding-top: 80px; /* Adjust this to match the height of your navbar */
+  }
 .container{
 	position: relative;
 	width: 100%;
@@ -567,6 +573,9 @@ p {
 }
 
 /* Projects section */
+#projects {
+	padding-top: 50px;
+  }
 #projects .projects {
 	flex-direction: column;
 	max-width: 1200px;
