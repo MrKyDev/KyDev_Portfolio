@@ -375,54 +375,51 @@ p {
 /* End Services Section */
 
 /* Start of Experience*/
-  .section-title {
-	font-size: 2.5em;
-	margin-bottom: 40px;
-	color: #480707;
-  }
-  
-  .section-title span {
-	color: #b5072c;
-  }
-  
-  .card-container {
-	display: flex;
-	justify-content: center;
-	gap: 50px;
-	flex-wrap: wrap;
-	max-width: 1200px;
-	margin: 0 auto;
-  }
-  
-  .experience-card {
-	background: #ffffff;
-	border-left: 5px solid #007BFF;
-	padding: 30px;
-	width: 610px;
-	box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-	text-align: left;
-	transition: transform 0.3s ease;
-  }
-  
-  .experience-card:hover {
-	transform: translateY(-5px);
-  }
-  
-  .experience-card h3 {
-	color: #007BFF;
-	margin-top: 0;
-  }
-  
-  .experience-card span {
-	display: block;
-	color: #666;
-	margin-bottom: 10px;
-  }
-  
-  .experience-card p {
-	color: #333;
-	font-size: 0.95em;
-  }
+.experience-section .box-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+    gap:1.5rem;
+}
+
+.experience-section .box-container .box{
+    text-align: center;
+    border:var(--border);
+    padding: 2rem;
+}
+
+.experience-section .box-container .box .icons a{
+    height: 5rem;
+    width: 5rem;
+    line-height: 5rem;
+    font-size: 2rem;
+    border:var(--border);
+    color:#fff;
+    margin:.3rem;
+}
+
+.experience-section .box-container .box .icons a:hover{
+    background:var(--main-color);
+}
+
+.experience-section .box-container .box .image{
+    padding: 2.5rem 0;
+}
+
+.experience-section .box-container .box .image img{
+    height: 25rem;
+}
+
+.experience-section .box-container .box .content h3{
+    color:#fff;
+    font-size: 2.5rem;
+}
+.content h1{
+	font-size: 430%;
+}
+
+.content h2{
+	font-size: 200%;
+}
   
 /*End of Experience*/
 .container{
